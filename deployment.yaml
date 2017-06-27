@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: gto-frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: gto-frontend
+      labels:
+        app: gto-frontend
+    spec:
+      containers:
+        - name: gto-frontend
+          image: cedbossneo/gto-frontend
+          ports:
+            - name: http
+              containerPort: 80 
